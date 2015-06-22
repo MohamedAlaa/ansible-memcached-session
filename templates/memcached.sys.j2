@@ -1,0 +1,13 @@
+# {{ ansible_managed }}
+
+# memcached default config file
+# 2015 - Mohamed Hassan <m@be-genius.com>
+# This configuration file is read by the start-memcached script provided as
+# part of the Debian GNU/Linux distribution.
+
+PORT="{{ memcached_port }}"
+USER="{{ memcached_user }}"
+MAXCONN="{{ memcached_connections }}"
+CACHESIZE="{{ memcached_memory_limit }}"
+THREADS="{{ memcached_threads }}"
+OPTIONS="-t {{ memcached_threads }} -vv 2>> {{ memcached_log_file }}"
