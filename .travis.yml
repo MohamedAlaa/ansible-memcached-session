@@ -6,8 +6,8 @@ env:
   - SITE=test.yml
 
 before_install:
-  - sudo yum update -qq
-  - sudo yum install -y curl
+  - sudo yum update
+  - sudo yum -y install curl
 
 install:
   # Install Ansible.
