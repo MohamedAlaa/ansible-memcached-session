@@ -1,15 +1,15 @@
 ---
-memcached_user: memcached
+memcached_user: memcache
 
 # Memcached Default Port
 memcached_port: 11211
 memcached_listen_ip: 127.0.0.1
 
-# 10GB Memory Limit
-memcached_memory_limit: 10240
+# 64MB Memory Limit
+memcached_memory_limit: 64
 
 # Concurrent connection limits
-memcached_connections: 20240
+memcached_connections: 1024
 
 # Memcached log file location
 memcached_log_file: /var/log/memcached.log
@@ -17,6 +17,6 @@ memcached_log_file: /var/log/memcached.log
 # Memcached Threads: normally the number of your server cores
 # increasing this number doesn't increase performance so be wise!
 # https://code.google.com/p/memcached/wiki/NewConfiguringServer#Threading
-memcached_threads: 48
+memcached_threads: 4
 
 max_object_size: 1m

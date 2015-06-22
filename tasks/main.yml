@@ -14,17 +14,17 @@
     mode: 0644
   notify: restart memcached
 
-- name: Creates sysconfig directory
-  file: path=/etc/sysconfig state=directory
+# - name: Creates sysconfig directory
+#   file: path=/etc/sysconfig state=directory
 
-- name: Copy sysconfig Memcached configuration. # /etc/sysconfig/memcached
-  template:
-    src: memcached.sys.j2
-    dest: /etc/sysconfig/memcached
-    owner: root
-    group: root
-    mode: 0644
-  notify: restart memcached
+# - name: Copy sysconfig Memcached configuration. # /etc/sysconfig/memcached
+#   template:
+#     src: memcached.sys.j2
+#     dest: /etc/sysconfig/memcached
+#     owner: root
+#     group: root
+#     mode: 0644
+#   notify: restart memcached
 
 - name: Ensure Memcached is started and set to run on startup.
   service: name=memcached state=started enabled=yes
