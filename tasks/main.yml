@@ -1,9 +1,9 @@
 ---
-- name: Install Memcached.
-  yum: name=memcached state=installed
-  with_items:
-    - libmemcache-dev
-    - memcached
+- include: installRedhat.yml
+  when: ansible_pkg_mgr == 'yum'
+
+- include: installDebian.yml
+  when: ansible_pkg_mgr == 'apt'
 
 - name: Copy Memcached configuration.
   template:
