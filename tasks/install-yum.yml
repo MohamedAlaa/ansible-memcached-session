@@ -1,0 +1,6 @@
+---
+- name: Install Memcached.
+  yum: name=memcached state=installed
+  with_items:
+    - libmemcache-dev
+    - memcached

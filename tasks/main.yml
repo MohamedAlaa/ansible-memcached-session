@@ -1,8 +1,8 @@
 ---
-- include: installRedhat.yml
+- include: install-yum.yml
   when: ansible_pkg_mgr == 'yum'
 
-- include: installDebian.yml
+- include: install-apt.yml
   when: ansible_pkg_mgr == 'apt'
 
 - name: Copy Memcached configuration.
