@@ -14,6 +14,9 @@
     mode: 0644
   notify: restart memcached
 
+- name: Creates sysconfig directory
+  file: path=/etc/sysconfig state=directory
+
 - name: Copy sysconfig Memcached configuration. # /etc/sysconfig/memcached
   template:
     src: memcached.sys.j2
